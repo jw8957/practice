@@ -12,6 +12,7 @@ vector<string> split(string origin, string delimiter) {
 	}
 	
 	if(len1 < len2) {
+		res.push_back(origin);
 		return res;
 	}
 	
