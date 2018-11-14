@@ -1,2 +1,2 @@
 # practice
-Some small coding practice
+Some small coding practice.
