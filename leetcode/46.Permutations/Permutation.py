@@ -8,14 +8,20 @@ def Permutation(arr, start, resultList):
         resultList.append(arr.copy())
         return
 
+    firstPos = set()
     for k in range(start, len(arr)):
-        Swap(arr, start, k)
-        Permutation(arr, start + 1, resultList)
-        Swap(arr, start, k)
+        if arr[k] not in firstPos:
+            Swap(arr, start, k)
+            Permutation(arr, start + 1, resultList)
+            Swap(arr, start, k)
+            firstPos.add(arr[k])
+        else:
+            print("Skip")
 
 if __name__ == '__main__':
-    arr = [1, 2, 3]
+    arr = [1, 2, 2, 3, 3]
     resultList = []
     Permutation(arr, 0, resultList)
 
-    print(resultList)
+    for res in resultList:
+        print(res)
